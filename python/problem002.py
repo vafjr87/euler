@@ -5,13 +5,16 @@ runs = 1000
 
 
 def main():
-    sum = 0
+    term_first = 1
+    term_second = 2
 
-    for x in range(1000):
-        if ((x % 3 == 0) or (x % 5 == 0)):
-            sum += x
+    for run in range(10):
+        fibonacci = term_first + term_second
+        print(fibonacci)
 
-    return sum
+        term_first = term_second
+        term_second = fibonacci
+
 
 
 if __name__ == "__main__":

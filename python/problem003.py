@@ -4,15 +4,17 @@ import time
 runs = 1000
 
 
-def main():
-    sum = 0
+def main(number):
+    divisor = 2
 
-    for x in range(1000):
-        if ((x % 3 == 0) or (x % 5 == 0)):
-            sum += x
+    while number != 1:
+        if number % divisor == 0:
+            number /= divisor
+        else:
+            divisor += 1
 
-    return sum
-
+    return divisor
+    
 
 if __name__ == "__main__":
     answer = 0
@@ -20,7 +22,7 @@ if __name__ == "__main__":
 
     for run in range(0, runs):
         start_time = time.time()
-        answer = main()
+        answer = main(600851475143)
         run_time = time.time() - start_time
         total_time += run_time
 
